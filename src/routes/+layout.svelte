@@ -1,8 +1,9 @@
 <script>
     import "../app.pcss";
-  import Footer from "./Components/Footer.svelte";
-  import Header from "./Components/Header.svelte";
+  import Footer from "./components/Footer.svelte";
+  import Header from "./components/Header.svelte";
 
+  
 </script>
 <Header/>
 <slot></slot>

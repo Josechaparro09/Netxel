@@ -1,20 +1,21 @@
 <script lang ="ts">
   import { goto} from '$app/navigation';
+  import {error } from '@sveltejs/kit';
   import authLogin from '../login/authLogin';
-  import Home from '../home/home.svelte';
+  import Dashboard from './Dashboard.svelte';
 	
 
   
 	let user = authLogin.user;
   function redirectIfNoUser(){
-    if ($user) {
-      goto('/dashboard');
+    if (!$user) {
+      goto('/error');
     }
   }
 </script>
 
 <main use:redirectIfNoUser>
-  {#if !$user}
-    <Home/>
+  {#if $user}
+    <Dashboard/>
   {/if}
 </main>
