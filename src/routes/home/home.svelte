@@ -1,9 +1,9 @@
 <script>
+
     import { Section, News, HeroHeader, HeroBody , FeatureDefault, FeatureItem} from 'flowbite-svelte-blocks';
     import { Button, DarkMode } from 'flowbite-svelte';
     import { ArrowRightSolid, VideoSolid, ChartSolid, LandmarkSolid, BriefcaseSolid, DollarSolid, RocketSolid, CogOutline } from 'flowbite-svelte-icons';
-  import Categories from '../components/Entries/Categories.svelte';
-  import UnitOfMesures from '../components/Entries/UnitOfMesures.svelte';
+  import Categories from '../components/Entries/Old table.svelte';
   import Providers from '../components/Entries/Providers.svelte';
   import Employees from '../components/Entries/Employees.svelte';
   import Products from '../components/Entries/Products.svelte';
@@ -76,7 +76,6 @@
     </Section>
     <div class="flex items-center justify-center">
       <Categories/>
-      <UnitOfMesures/>
       <Providers/>
       <Employees/>
       <Products/>

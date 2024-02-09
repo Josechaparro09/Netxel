@@ -31,7 +31,7 @@
 		
       {#if $user}
         <img src={gravatarUrl($user.email, { size: 40 })} alt="Gravatar" />
-        <button class="bg-primary-300 text-white rounded-full" on:click={logout}>Sign out</button>
+        <button class="bg-primary-300 text-white rounded-full" on:click={logout}>   Salir   </button>
       {/if}
       
 	</div>
