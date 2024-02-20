@@ -14,7 +14,11 @@ export const insertUnitsOfMeasures = async (shortName:string,largeName:string) =
   }
 };
 <<<<<<< HEAD
+<<<<<<< HEAD
 export const getAllMeasures = async () => {
+=======
+export const getAll = async () => {
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
 export const getAll = async () => {
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
@@ -28,6 +32,7 @@ export const getAll = async () => {
     console.log(err);
   }
 };
+<<<<<<< HEAD
 <<<<<<< HEAD
 export const getAllMeasuresNames = async () => {
   try {
@@ -52,6 +57,8 @@ export const getMeasureById = async(id:any) =>{
     console.log(err);
   }
 }
+=======
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 export const updateUnitsOfMeasures = async (id: any, short_name: string, large_name:string) => {

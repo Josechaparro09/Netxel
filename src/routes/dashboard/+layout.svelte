@@ -4,13 +4,19 @@
     import authLogin from '../login/authLogin';
     import Slidebar from './slidebar.svelte';
 <<<<<<< HEAD
+<<<<<<< HEAD
     let user = authLogin.user;
 
 =======
+=======
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
       
   
     
       let user = authLogin.user;
+<<<<<<< HEAD
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
+=======
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
     function redirectIfNoUser(){
       if (!$user) {
@@ -22,10 +28,15 @@
   <main use:redirectIfNoUser>
     {#if $user}
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div class="flex h-screen">
         <Slidebar/>
         <slot/>
       </div>
+=======
+      <Slidebar/>
+      <slot/>
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
       <Slidebar/>
       <slot/>

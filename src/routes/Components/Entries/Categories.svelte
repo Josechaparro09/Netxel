@@ -6,7 +6,11 @@
 
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     import { getAllCategories, insertCategory,deleteCategory,updateCategory } from '../db/Categoriesdb';
+=======
+    import { getAll, insertCategory,deleteCategory,updateCategory } from '../db/Categoriesdb';
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
     import { getAll, insertCategory,deleteCategory,updateCategory } from '../db/Categoriesdb';
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
@@ -34,7 +38,11 @@
   async function fetchData() {
     try {
 <<<<<<< HEAD
+<<<<<<< HEAD
       items = await getAllCategories();
+=======
+      items = await getAll();
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
       items = await getAll();
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
@@ -146,8 +154,12 @@
   </script>
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   <div class="flex-1 p-4">
     <Section classSection='dark:bg-gray-900 p-3 sm:p-5' >
+=======
+  <Section classSection='bg-gray-50 dark:bg-gray-900 p-3 sm:p-5'>
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
   <Section classSection='bg-gray-50 dark:bg-gray-900 p-3 sm:p-5'>
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
@@ -258,8 +270,12 @@
         </div>
       </TableSearch>
 <<<<<<< HEAD
+<<<<<<< HEAD
   </Section>
   </div>
+=======
+  </Section>
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
   </Section>
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2

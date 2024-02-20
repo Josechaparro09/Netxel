@@ -1,7 +1,11 @@
 <script lang="ts">
 	import Ejemplo from './Categories.svelte';
 <<<<<<< HEAD
+<<<<<<< HEAD
 	import {deleteCategory, getAllCategories, insertCategory, updateCategory } from '../db/Categoriesdb';
+=======
+	import {deleteCategory, getAll, insertCategory, updateCategory } from '../db/Categoriesdb';
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
 	import {deleteCategory, getAll, insertCategory, updateCategory } from '../db/Categoriesdb';
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2

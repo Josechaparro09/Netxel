@@ -6,7 +6,12 @@
 
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     import { deleteUnitsOfMeasures, getAllMeasures, insertUnitsOfMeasures, updateUnitsOfMeasures } from '../db/UnitsOfMesuresdb';
+=======
+    import { deleteUnitsOfMeasures, getAll, insertUnitsOfMeasures, updateUnitsOfMeasures } from '../db/UnitsOfMesuresdb';
+  import { categories, categoryName, updateCategory } from "../db/Categoriesdb";
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
     import { deleteUnitsOfMeasures, getAll, insertUnitsOfMeasures, updateUnitsOfMeasures } from '../db/UnitsOfMesuresdb';
   import { categories, categoryName, updateCategory } from "../db/Categoriesdb";
@@ -36,7 +41,11 @@
   async function fetchData() {
     try {
 <<<<<<< HEAD
+<<<<<<< HEAD
       items = await getAllMeasures();
+=======
+      items = await getAll();
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
       items = await getAll();
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
@@ -158,7 +167,11 @@
 </script>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Section classSection='bg-gray-50 dark:bg-gray-900 p-3 sm:p-5 flex-1 p-4'>
+=======
+    <Section classSection='bg-gray-50 dark:bg-gray-900 p-3 sm:p-5'>
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
     <Section classSection='bg-gray-50 dark:bg-gray-900 p-3 sm:p-5'>
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2

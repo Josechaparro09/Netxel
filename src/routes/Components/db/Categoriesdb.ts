@@ -13,8 +13,13 @@ export const insertCategory = async (categoryName: string) => {
     console.log(err);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 export const getAllCategories = async () => {
+=======
+};
+export const getAll = async () => {
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
 };
 export const getAll = async () => {
@@ -28,6 +33,7 @@ export const getAll = async () => {
   } catch (err) {
     console.log(err);
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 export const getAllCategoriesNames = async () => {
@@ -44,6 +50,9 @@ export const getAllCategoriesNames = async () => {
 =======
 };
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
+=======
+};
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 export const updateCategory = async (id: number, category_name: string) => {
   try {
     const { data, error } = await supabase
@@ -55,7 +64,11 @@ export const updateCategory = async (id: number, category_name: string) => {
     console.log(err);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+};
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
 };
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
@@ -70,8 +83,12 @@ export const deleteCategory = async (id: number) => {
     console.log(err);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 console.log()
+=======
+};
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
 };
 >>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2

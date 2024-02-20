@@ -1,9 +1,15 @@
 <script>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   import { Section, News, HeroHeader, HeroBody , FeatureDefault, FeatureItem} from 'flowbite-svelte-blocks';
   import { Button, DarkMode } from 'flowbite-svelte';
   import { ArrowRightSolid, VideoSolid, ChartSolid, LandmarkSolid, BriefcaseSolid, DollarSolid, RocketSolid, CogOutline } from 'flowbite-svelte-icons';
+=======
+    import { Section, News, HeroHeader, HeroBody , FeatureDefault, FeatureItem} from 'flowbite-svelte-blocks';
+    import { Button, DarkMode } from 'flowbite-svelte';
+    import { ArrowRightSolid, VideoSolid, ChartSolid, LandmarkSolid, BriefcaseSolid, DollarSolid, RocketSolid, CogOutline } from 'flowbite-svelte-icons';
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 =======
     import { Section, News, HeroHeader, HeroBody , FeatureDefault, FeatureItem} from 'flowbite-svelte-blocks';
     import { Button, DarkMode } from 'flowbite-svelte';
