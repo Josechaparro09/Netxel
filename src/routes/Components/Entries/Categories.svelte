@@ -5,7 +5,11 @@
     import { PlusSolid, ChevronDownSolid, FilterSolid, ChevronRightOutline, ChevronLeftOutline,TrashBinOutline,EditOutline, ExclamationCircleOutline} from 'flowbite-svelte-icons';
 
     
+<<<<<<< HEAD
     import { getAllCategories, insertCategory,deleteCategory,updateCategory } from '../db/Categoriesdb';
+=======
+    import { getAll, insertCategory,deleteCategory,updateCategory } from '../db/Categoriesdb';
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
     let edit = false
     let divClass='bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden';
     let innerDivClass='flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4';
@@ -29,7 +33,11 @@
   let totalItems:any
   async function fetchData() {
     try {
+<<<<<<< HEAD
       items = await getAllCategories();
+=======
+      items = await getAll();
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
       paginationData=items
       totalItems=paginationData.length;
     } catch (error) {
@@ -137,8 +145,12 @@
   }
   </script>
   
+<<<<<<< HEAD
   <div class="flex-1 p-4">
     <Section classSection='dark:bg-gray-900 p-3 sm:p-5' >
+=======
+  <Section classSection='bg-gray-50 dark:bg-gray-900 p-3 sm:p-5'>
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
       <TableSearch placeholder="Buscar" hoverable={true} bind:inputValue={searchTerm} {divClass} {innerDivClass} {searchClass} {classInput} >
   
       <div slot="header" class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
@@ -245,5 +257,9 @@
           </ButtonGroup>
         </div>
       </TableSearch>
+<<<<<<< HEAD
   </Section>
   </div>
+=======
+  </Section>
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2

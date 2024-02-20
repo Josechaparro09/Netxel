@@ -17,7 +17,11 @@
     let spanClass = "flex-1 ml-3 whitespace-nowrap";
     $: activeUrl = $page.url.pathname;
   </script>  
+<<<<<<< HEAD
   <span class= "">
+=======
+  <span class= "mx-auto flex flex-wrap  items-center container">
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
     <Sidebar>
       <SidebarWrapper>
         <SidebarGroup>
@@ -63,11 +67,21 @@
             
           </SidebarDropdownWrapper>
           
+<<<<<<< HEAD
           <SidebarItem label="Ventas" href="/dashboard/ventas" {spanClass}>
             <svelte:fragment slot="icon">
               <MailBoxSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
             </svelte:fragment>
             
+=======
+          <SidebarItem label="Inbox" {spanClass}>
+            <svelte:fragment slot="icon">
+              <MailBoxSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+            </svelte:fragment>
+            <svelte:fragment slot="subtext">
+              <span class="inline-flex justify-center items-center p-3 ms-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
+            </svelte:fragment>
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
           </SidebarItem>
           <SidebarItem label="Users">
             <svelte:fragment slot="icon">

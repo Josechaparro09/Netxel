@@ -13,7 +13,11 @@ export const insertUnitsOfMeasures = async (shortName:string,largeName:string) =
     console.log(err);
   }
 };
+<<<<<<< HEAD
 export const getAllMeasures = async () => {
+=======
+export const getAll = async () => {
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
   try {
     let { data: units_of_measures, error } = await supabase
       .from("units_of_measures")
@@ -24,6 +28,7 @@ export const getAllMeasures = async () => {
     console.log(err);
   }
 };
+<<<<<<< HEAD
 export const getAllMeasuresNames = async () => {
   try {
     let { data: units_of_measures, error } = await supabase
@@ -47,6 +52,8 @@ export const getMeasureById = async(id:any) =>{
     console.log(err);
   }
 }
+=======
+>>>>>>> 3978b724418ba3a2eea6ab1b4795b71f3146cad2
 export const updateUnitsOfMeasures = async (id: any, short_name: string, large_name:string) => {
   try {
     const { data, error } = await supabase
