@@ -13,11 +13,23 @@ export const insertUnitsOfMeasures = async (shortName:string,largeName:string) =
     console.log(err);
   }
 };
-export const getAll = async () => {
+export const getAllMeasures = async () => {
   try {
     let { data: units_of_measures, error } = await supabase
       .from("units_of_measures")
       .select("*");
+    console.log(units_of_measures);
+    return units_of_measures;
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const getAllMeasuresNames = async () => {
+  try {
+    let { data: units_of_measures, error } = await supabase
+      .from("units_of_measures")
+      .select("large_name")
+      .eq("active",true)
     console.log(units_of_measures);
     return units_of_measures;
   } catch (err) {

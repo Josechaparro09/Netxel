@@ -15,9 +15,9 @@
     }
   </script>
   <main use:redirectIfNoUser>
-    {#if $user}
+    <div class="flex h-screen">
       <Slidebar/>
       <slot/>
-    {/if}
+    </div>
   </main> 
   

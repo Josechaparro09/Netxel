@@ -3,14 +3,6 @@
     import { Section, News, HeroHeader, HeroBody , FeatureDefault, FeatureItem} from 'flowbite-svelte-blocks';
     import { Button, DarkMode } from 'flowbite-svelte';
     import { ArrowRightSolid, VideoSolid, ChartSolid, LandmarkSolid, BriefcaseSolid, DollarSolid, RocketSolid, CogOutline } from 'flowbite-svelte-icons';
-  import Categories from '../components/Entries/Old table.svelte';
-  import Providers from '../components/Entries/Providers.svelte';
-  import Employees from '../components/Entries/Employees.svelte';
-  import Products from '../components/Entries/Products.svelte';
-  import RawMaterials from '../components/Entries/RawMaterials.svelte';
-
-
-
   </script>
   
   <div class="grid place-items-center">
@@ -74,13 +66,4 @@
         </FeatureItem>
       </FeatureDefault>
     </Section>
-    <div class="flex items-center justify-center">
-      <Categories/>
-      <Providers/>
-      <Employees/>
-      <Products/>
-      <RawMaterials/>
-      <a href="/dashboard">
-        <button class="bg-primary-300">dashboard</button>
-      </a>
-    </div>
+  

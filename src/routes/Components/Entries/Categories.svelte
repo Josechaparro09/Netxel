@@ -3,9 +3,7 @@
     import { Table, Label,TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch, Button, Dropdown, DropdownItem, Checkbox, ButtonGroup, Modal, Input } from 'flowbite-svelte';
     import { Section} from 'flowbite-svelte-blocks';
     import { PlusSolid, ChevronDownSolid, FilterSolid, ChevronRightOutline, ChevronLeftOutline,TrashBinOutline,EditOutline, ExclamationCircleOutline} from 'flowbite-svelte-icons';
-
-    
-    import { getAll, insertCategory,deleteCategory,updateCategory } from '../db/Categoriesdb';
+    import { getAllCategories, insertCategory,deleteCategory,updateCategory } from '../db/Categoriesdb';
     let edit = false
     let divClass='bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden';
     let innerDivClass='flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4';
@@ -25,11 +23,10 @@
     let endPage:any;
     let items:any = [];
     let paginationData:any = [];
-
   let totalItems:any
   async function fetchData() {
     try {
-      items = await getAll();
+      items = await getAllCategories();
       paginationData=items
       totalItems=paginationData.length;
     } catch (error) {
@@ -82,7 +79,6 @@
   
     $: currentPageItems = paginationData.slice(currentPosition, currentPosition + itemsPerPage);
     $: filteredItems = paginationData.filter((item:any) => item.category_name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
-
     let categoryName = "";
     let selectedCategoryId:any = null;
     const resetForm = () => {
@@ -90,10 +86,8 @@
     selectedCategoryId = null;
     categoryName = "";
   };
-
     const handleSubmit = async () => {
     try {
-
       if (edit) {
         await updateCategory(selectedCategoryId,categoryName);
         formModal=false
@@ -111,7 +105,6 @@
     try {
       // Elimina la categoría
       await deleteCategory(id);
-
       // Recarga los datos después de la eliminación
       await fetchData();
     } catch (error) {
@@ -136,10 +129,11 @@
     selectedName=nombre
   }
   </script>
-  
-  <Section classSection='bg-gray-50 dark:bg-gray-900 p-3 sm:p-5'>
+
+  <div class="flex-1 p-4">
+    <Section classSection='dark:bg-gray-900 p-3 sm:p-5' >
       <TableSearch placeholder="Buscar" hoverable={true} bind:inputValue={searchTerm} {divClass} {innerDivClass} {searchClass} {classInput} >
-  
+
       <div slot="header" class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
         <Button on:click={() => (insertar())}>
           <PlusSolid class="h-3.5 w-3.5 mr-2" />Agregar categoria
@@ -152,7 +146,7 @@
             {:else}
              <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Nueva categoria</h3>
             {/if}
-            
+
             <Label class="space-y-2">
               <span>Nombre</span>
               <Input type="text" name="Nombre" required bind:value={categoryName} class="" />
@@ -221,7 +215,7 @@
                 <TableBodyCell tdClass="px-4 py-3">{item.category_name}</TableBodyCell>
                 <div class="justify-end flex" >
                   <Button  on:click={() => editar(item.id,item.category_name)} class="!p-2 m-2" color ="primary"><EditOutline class="w-5 h-5" /></Button>
-                  
+
                   <Button on:click={() => eliminar(item.id,item.category_name)} class="!p-2 m-2" color ="red"><TrashBinOutline class="w-5 h-5" /></Button>
                 </div>
               </TableBodyRow>
@@ -245,3 +239,4 @@
         </div>
       </TableSearch>
   </Section>
+  </div>

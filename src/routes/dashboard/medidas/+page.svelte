@@ -1,4 +1,6 @@
 <script lang="ts">
-  import UnitOfMesures from "../../components/Entries/UnitOfMesures.svelte";
+  
+  import UnitOfMesures from "../../Components/Entries/UnitOfMesures.svelte";
+
 </script>
 <UnitOfMesures/>
