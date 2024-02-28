@@ -1,7 +1,8 @@
 import { c as create_ssr_component, a as compute_rest_props, b as spread, e as escape_attribute_value, d as escape_object, f as add_attribute, v as validate_component, g as subscribe } from "../../chunks/ssr.js";
 import { twMerge } from "tailwind-merge";
-import { a as authLogin } from "../../chunks/client.js";
+import { a as authLogin } from "../../chunks/authLogin.js";
 import gravatarUrl from "gravatar-url";
+import "../../chunks/client.js";
 const DarkMode = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $$restProps = compute_rest_props($$props, ["btnClass", "size", "ariaLabel"]);
   let { btnClass = "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5" } = $$props;
@@ -67,7 +68,7 @@ const Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   const user = authLogin.user;
   $$unsubscribe_user = subscribe(user, (value) => $user = value);
   $$unsubscribe_user();
-  return `<header><div class="mx-auto flex flex-wrap justify-between items-center container"><a href="/" data-svelte-h="svelte-1ed43da"><span class="flex borderp-10"><img class="w-12 h-12 m-3" src="src\\Images\\NetxelLogo.svg" alt="logo"> <span class="grid place-content-center mt-1"><div class="bg-primary-500 rounded-full items-center justify-center inline-flex py-0.5 px-2.5 font-medium color dark:text-white">v0.0.15</div></span></span></a> <div class="flex">${validate_component(DarkMode, "DarkMode").$$render($$result, { class: "px-10 border-black" }, {}, {})} <div class="nav-end">${$user ? `<img${add_attribute("src", gravatarUrl($user.email, { size: 40 }), 0)} alt="Gravatar"> <button class="bg-primary-300 text-white rounded-full" data-svelte-h="svelte-x5y1zm">Sign out</button>` : ``}</div></div></div></header>`;
+  return `<header><div class="mx-auto flex flex-wrap justify-between items-center container"><a href="/" data-svelte-h="svelte-1puymdk"><span class="flex borderp-10"><img class="w-12 h-12 m-3" src="NetxelLogo.svg" alt="logo"> <span class="grid place-content-center mt-1"><div class="bg-primary-500 rounded-full items-center justify-center inline-flex py-0.5 px-2.5 font-medium color dark:text-white">v0.0.15</div></span></span></a> <div class="flex">${validate_component(DarkMode, "DarkMode").$$render($$result, { class: "px-10 border-black" }, {}, {})} <div class="nav-end">${$user ? `<img${add_attribute("src", gravatarUrl($user.email, { size: 40 }), 0)} alt="Gravatar"> <button class="bg-primary-300 text-white rounded-full" data-svelte-h="svelte-1ty2980">Salir</button>` : ``}</div></div></div></header>`;
 });
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(Header, "Header").$$render($$result, {}, {}, {})} ${slots.default ? slots.default({}) : ``} ${validate_component(Footer_1, "Footer").$$render($$result, {}, {}, {})}`;

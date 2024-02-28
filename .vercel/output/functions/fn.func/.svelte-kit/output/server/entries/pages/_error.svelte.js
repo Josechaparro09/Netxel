@@ -16,9 +16,9 @@ const Error = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     default: () => {
       return `${validate_component(Page404, "Page404").$$render($$result, {}, {}, {
         paragraph: () => {
-          return `<p class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white" data-svelte-h="svelte-zlhil8">Something&#39;s missing.</p> <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400" data-svelte-h="svelte-iwmc9v">Sorry, we can&#39;t find that page. You&#39;ll find lots to explore on the home page.</p> ${validate_component(Button, "Button").$$render($$result, { href: "/", size: "lg", color: "red" }, {}, {
+          return `<p class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white" data-svelte-h="svelte-178teh">Algo salio mal</p> <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400" data-svelte-h="svelte-qliiu9">La ruta especificada no se encuentra.</p> ${validate_component(Button, "Button").$$render($$result, { href: "/", size: "lg", color: "red" }, {}, {
             default: () => {
-              return `Back to Homepage`;
+              return `Ir al Inicio`;
             }
           })} `;
         },

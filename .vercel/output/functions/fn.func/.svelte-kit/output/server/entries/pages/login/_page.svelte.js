@@ -3,6 +3,7 @@ import { S as Section, B as Button } from "../../../chunks/Button.js";
 import { R as Register } from "../../../chunks/Register.js";
 import { C as Checkbox } from "../../../chunks/Checkbox.js";
 import { L as Label, I as Input } from "../../../chunks/Input.js";
+import "../../../chunks/authLogin.js";
 import "../../../chunks/client.js";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let email, password;

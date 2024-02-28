@@ -1,6 +1,22 @@
-import { c as create_ssr_component, a as compute_rest_props, b as spread, d as escape_object, e as escape_attribute_value, f as add_attribute, k as getContext, v as validate_component, j as escape, h as compute_slots } from "./ssr.js";
+import { c as create_ssr_component, a as compute_rest_props, b as spread, d as escape_object, e as escape_attribute_value, f as add_attribute, i as getContext, v as validate_component, j as escape, h as compute_slots } from "./ssr.js";
 import { twMerge } from "tailwind-merge";
-import { W as Wrapper } from "./Wrapper.js";
+import { i as is_void } from "./Button.js";
+const Wrapper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $$restProps = compute_rest_props($$props, ["tag", "show", "use"]);
+  let { tag = "div" } = $$props;
+  let { show } = $$props;
+  let { use = () => {
+  } } = $$props;
+  if ($$props.tag === void 0 && $$bindings.tag && tag !== void 0)
+    $$bindings.tag(tag);
+  if ($$props.show === void 0 && $$bindings.show && show !== void 0)
+    $$bindings.show(show);
+  if ($$props.use === void 0 && $$bindings.use && use !== void 0)
+    $$bindings.use(use);
+  return `${show ? `${((tag$1) => {
+    return tag$1 ? `<${tag}${spread([escape_object($$restProps)], {})}>${is_void(tag$1) ? "" : `${slots.default ? slots.default({}) : ``}`}${is_void(tag$1) ? "" : `</${tag$1}>`}` : "";
+  })(tag)}` : `${slots.default ? slots.default({}) : ``}`} `;
+});
 const Label = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let labelClass;
   let $$restProps = compute_rest_props($$props, ["color", "defaultClass", "show"]);
@@ -135,5 +151,6 @@ const Input = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 export {
   Input as I,
-  Label as L
+  Label as L,
+  Wrapper as W
 };
