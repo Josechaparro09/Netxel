@@ -247,6 +247,13 @@
       return nombre = category.id===id? category.category_name:null
     }
   }
+  let open = true;
+  let counter = 6;
+  function timeout():any {
+    if (--counter > 0) return setTimeout(timeout, 1000);
+    open = false;
+  }
+
   
   </script>
 
@@ -286,10 +293,10 @@
                       >Categoria
                       <Select class="mt-2" on:change={handleSelectCategories} value= {categoryName} required>
 
-                        {console.log(categoriesNames)}
+        
 
                         {#each categoriesNames as category}
-                          <option value={category.category_name}>{category.category_name}</option>
+                           <option value={category.category_name}>{category.category_name}</option>
                         {/each}
 
                       </Select>
@@ -326,6 +333,7 @@
                 <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">¿Estas seguro que deseas eliminar este producto? </h3>
 
               <Button color="red" class="me-2" on:click={async () => await handleDelete(producto.id)} >Si, estoy seguro</Button>
+              
               <Button color="alternative">No, cancelar</Button>
             </div>
           </Modal>

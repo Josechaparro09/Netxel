@@ -17,7 +17,8 @@ export const getAllMeasures = async () => {
   try {
     let { data: units_of_measures, error } = await supabase
       .from("units_of_measures")
-      .select("*");
+      .select("*")
+      .eq("active",true)
     console.log(units_of_measures);
     return units_of_measures;
   } catch (err) {

@@ -1,8 +1,6 @@
 import { supabase } from "../../login/authLogin";
 export let categoryName = "";
-export const categories:{category_name:string}={
-  category_name:""
-}
+
 export const insertCategory = async (categoryName: string) => {
   try {
     const { data, error } = await supabase

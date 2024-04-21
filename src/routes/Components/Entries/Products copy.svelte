@@ -168,7 +168,7 @@
     formModal=true
     rawMaterial.id=id
     rawMaterialName=rawMaterial.name=rawMaterialName
-    providerId=rawMaterial.provider_id=providerId 
+    providerId=rawMaterial.provider_id=providerId
     providerName=rawMaterial.provider_name=providerName
     unitOfMeasureId=rawMaterial.unit_of_measure_id=unitofmeasureid
     unitOfMeasureName=rawMaterial.unit_of_measure_name=unitofmeasurename
@@ -208,7 +208,7 @@
   }
   function handleSelectMeasures(event: Event) {
     const selectedIndex = (event.target as HTMLSelectElement).selectedIndex;
-    measureSelected = measures[selectedIndex-1]  
+    measureSelected = measures[selectedIndex-1]
     unitOfMeasureId=measureSelected.id
     measureSelectedIndex = selectedIndex
   }
@@ -250,21 +250,16 @@
             Nuevo Insumo
           </Button>
           <Modal title="Nuevo insumo" bind:open={formModal} autoclose class="min-w-full">
-            <form on:submit|preventDefault={handleSubmit}>
+            <form on:submit={handleSubmit}>
               <div class="grid gap-4 mb-4 sm:grid-cols-2">
                 <div>
                   <Label for="Nombre" class="mb-2">Nombre</Label>
-                  <Input type="text" id="name"  required bind:value={rawMaterialName}/>
+                  <Input type="text" id="name"  required />
                 </div>
                 <div>
                     <Label
                       >Medida
-                      <Select class="mt-2" on:change={handleSelectMeasures}  value= {unitOfMeasureName} required>
-                        {#each measures as measure}
-                          <option value={measure.short_name}>{measure.short_name}</option>
-                        {/each}
-
-                      </Select>
+                      <Select class="mt-2" items={measures} bind:value={measureSelected} required />
                     </Label>
                 </div>
                 
@@ -272,22 +267,13 @@
               <div class="justify-center  ">
                 <Label
                   >Proveedor
-                  <Select class="mt-2" on:change={handleSelectCProviders}  value= {providerName} required>
-                    {#each providers as provider}
-                      <option value={providers.name}>{provider.name}</option>
-                    {/each}
-
-                  </Select>
+                  <Select class="mt-2" items={providers} bind:value={providerSelected} required />
                 </Label>
             </div>
               <div class=" justify-center bottom-0 right-0 flex items-end m-5">
                 <Button type="submit" class="w-52 h-50 ">
                   <svg class="mr-1 -ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" /></svg>
-                  {#if edit}
-                    Editar insumo
-                  {:else}
-                    Agregar insumo
-                  {/if}
+                  Agregar insumo
                 </Button>
               </div>
             </form>
@@ -338,8 +324,8 @@
               {#each filteredItems as item (item.id)}
                 <TableBodyRow>
                   <TableBodyCell tdClass="px-4 py-3">{item.name}</TableBodyCell>
+                  <TableBodyCell tdClass="px-4 py-3">{item.raw_materials.provider_name}</TableBodyCell>
                   <TableBodyCell tdClass="px-4 py-3">{item.units_of_measures.short_name}</TableBodyCell>
-                  <TableBodyCell tdClass="px-4 py-3">{item.providers.name}</TableBodyCell>
                   <div class="justify-end flex" >
 
                       productName=producto.product_name=productName
@@ -350,7 +336,7 @@
                       presentationQuantity=producto.presentation_quantity=presentationQuantity
                       productDescription=producto.description=description
 
-                      <Button  on:click={() => editar(item.id,item.product_name,item.products_categories.id,item.products_categories.category_name,item.units_of_measures.id,item.units_of_measures.large_name)} class="!p-2 m-2" color ="primary"><EditOutline class="w-5 h-5" /></Button>
+                      <Button  on:click={() => editar(item.id,item.product_name,item.products_categories.id,item.products_categories.category_name,item.units_of_measures.id,item.units_of_measures.short_name)} class="!p-2 m-2" color ="primary"><EditOutline class="w-5 h-5" /></Button>
 
                     <Button on:click={() => eliminar(item.id,item.product_name,item.category_id,item.unit_of_measure_id)} class="!p-2 m-2" color ="red"><TrashBinOutline class="w-5 h-5" /></Button>
                   </div>
@@ -359,12 +345,15 @@
             {:else}
               {#each currentPageItems as item (item.id)}
                 <TableBodyRow>
-                  <TableBodyCell tdClass="px-4 py-3">{item.name}</TableBodyCell>
-                  <TableBodyCell tdClass="px-4 py-3">{item.units_of_measures.short_name}</TableBodyCell>
-                  <TableBodyCell tdClass="px-4 py-3">{item.providers.name}</TableBodyCell>
+                  <TableBodyCell tdClass="px-4 py-3">{item.product_name}</TableBodyCell>
+                  <TableBodyCell tdClass="px-4 py-3">{item.products_categories.category_name}</TableBodyCell>
+                  <TableBodyCell tdClass="px-4 py-3">{item.units_of_measures.large_name}</TableBodyCell>
+                  <TableBodyCell tdClass="px-4 py-3">{item.presentation_quantity}</TableBodyCell>
+                  <TableBodyCell tdClass="px-4 py-3">{item.production_price}</TableBodyCell>
+                  <TableBodyCell tdClass="px-4 py-3">{item.sale_price}</TableBodyCell>
                   <div class="justify-end flex" >
 
-                    <Button  on:click={() => editar(item.id,item.product_name,item.products_categories.id,item.products_categories.category_name,item.units_of_measures.id,item.units_of_measures.large_name)} class="!p-2 m-2" color ="primary"><EditOutline class="w-5 h-5" /></Button>
+                    <Button  on:click={() => editar(item.id,item.product_name,item.products_categories.id,item.products_categories.category_name,item.units_of_measures.id,item.units_of_measures.short_name)} class="!p-2 m-2" color ="primary"><EditOutline class="w-5 h-5" /></Button>
 
                     <Button on:click={() => eliminar(item.id,item.product_name,item.category_id,item.unit_of_measure_id)} class="!p-2 m-2" color ="red"><TrashBinOutline class="w-5 h-5" /></Button>
 
