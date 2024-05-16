@@ -6,13 +6,6 @@ import type { Session } from "@supabase/supabase-js";
 declare global {
 	namespace App {
 		// interface Error {}
-		interface Locals {
-			sb:TypeSupabaseClient
-			session:Session | null
-		}
-		interface PageData {
-			session:import("@supabase/supabase-js").Session | null
-		}
 		// interface PageState {}
 		// interface Platform {}
 	}
